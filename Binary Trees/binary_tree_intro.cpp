@@ -1,4 +1,5 @@
 /*
+THIS IS A C IMPLEMENTATION
 create a simple tree with 4 nodes.
 The created tree would be as following.
 
