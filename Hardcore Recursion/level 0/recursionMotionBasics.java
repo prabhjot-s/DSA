@@ -8,7 +8,7 @@ public class recursionMotionBasics {
 	public static void main(String[] args) {
 		//printDecreasing(5);
 		//printIncreasing(5);
-		printIncreasingDecreasing(5);
+		printDecreasingIncreasing(5);
 
 	}
 	/*Print Decreasing
@@ -40,19 +40,19 @@ public class recursionMotionBasics {
 		System.out.println(n);
 	}
 	/*
-	 * Print increasing decreasing
+	 * Print decreasing increasing
 	 * Expectation = print(n) + Faith + print(n)
 	 *                  |         |        |
 	 * Example:         3      2 1 1 2     3
 	 * */
-	public static void printIncreasingDecreasing(int n)
+	public static void printDecreasingIncreasing(int n)
 	{
 		if(n==0)
 		{
 			return;
 		}
 		System.out.println(n);
-		printIncreasingDecreasing(n-1);
+		printDecreasingIncreasing(n-1);
 		System.out.println(n);
 	}
 }
