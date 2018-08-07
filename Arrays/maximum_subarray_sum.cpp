@@ -39,7 +39,7 @@ int main()
 
 //Improving a little on time complexity from O(n^3) to O(n^2)
 //Using the cumulative sum approach
-
+/*
 int main()
 {
   const int n=9;
@@ -73,4 +73,27 @@ int main()
   {
     cout<<a[k]<<",";
   }
+}
+*/
+
+//Further Improving the time complexity from O(n^2) to O(n)
+//Using Kadane's algorithm
+int main()
+{
+  const int n=9;
+  int a[n]={-4,1,3,-2,6,2,-8,-9,4};
+  int maximumSum=0;
+  int currentSum=0;
+  int left=-1,right=-1;
+  //applying Kadane's algorithm (Single loop maximum Subarray calculation)
+  for(int i=0;i<n;i++)
+  {
+    currentSum+=a[i];
+    if(currentSum<0)
+    {
+      currentSum=0;
+    }
+    maximumSum=max(currentSum,maximumSum); //max is an inbuilt function
+  }
+  cout<<"The maximum sum is: "<<maximumSum<<endl;
 }
