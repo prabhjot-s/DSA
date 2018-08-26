@@ -7,7 +7,7 @@ struct node{
   int data; //this specifies the type of data to be stores in the linked list
   node* next;
 };
-node* insert(node** head, int data) //NOTE: we are recieving the address of head,which is a pointer, in a pointer
+void insert(node** head, int data) //NOTE: we are recieving the address of head,which is a pointer, in a pointer
 //                                    therefore in this function head is a pointer to pointer any changes made in (*head)
 //                                    will affect the head in the main function
 {
@@ -15,7 +15,6 @@ node* insert(node** head, int data) //NOTE: we are recieving the address of head
   temp->data = data;
   temp->next = *head;
   *head = temp;
-  return *head;
 }
 void print(node* head)  //NOTE: here we are not passing the head by reference therefore the head variable in this
                         // function is a copy of the head variable of main function changes made to head here will not affect
@@ -43,7 +42,7 @@ int main(int argc, char const *argv[]) {
   for(int i=0;i<n;i++)
   {
     cin>>x;
-    head = insert( &head , x); //passing the address of head pointer i.e. it should be received in a pointer to the pointer.
+    insert( &head , x); //passing the address of head pointer i.e. it should be received in a pointer to the pointer.
     print(head);
   }
   return 0;
